@@ -29,7 +29,7 @@ SentinelService::~SentinelService() {
 }
 
 void SentinelService::Start() {
-  pika_sentinel_addr_ = std::format("{}:{}", g_config.ip, g_config.port);
+  pika_sentinel_addr_ = fmt::v9::format("{}:{}", g_config.ip, g_config.port);
   running_ = true;
   thread_ = std::thread(&SentinelService::Run, this);
 }
